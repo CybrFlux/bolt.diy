@@ -1,6 +1,6 @@
 {
   "name": "bolt",
-  "description": "An AI Agent",
+  "description": "CybrBuild \u2014 CybrFlux AI builder (bolt.diy fork)",
   "private": true,
   "license": "MIT",
   "sideEffects": false,
@@ -8,7 +8,7 @@
   "version": "1.0.0",
   "author": {
     "name": "bolt.diy team",
-    "email": "maintainers@bolt.diy"
+    "email": "team@cybrflux.online"
   },
   "scripts": {
     "deploy": "npm run build && wrangler pages deploy",
@@ -152,7 +152,10 @@
     "use-debounce": "^10.0.4",
     "vite-plugin-node-polyfills": "^0.22.0",
     "zod": "^3.24.1",
-    "zustand": "^5.0.3"
+    "zustand": "^5.0.3",
+    "remix-auth": "4.2.0",
+    "remix-auth-oauth2": "3.4.1",
+    "@coji/remix-auth-google": "4.2.0"
   },
   "devDependencies": {
     "@blitz/eslint-plugin": "0.1.0",

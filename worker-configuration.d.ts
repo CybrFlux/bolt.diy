@@ -16,6 +16,17 @@ interface Env {
   GOOGLE_GENERATIVE_AI_API_KEY: string;
   MISTRAL_API_KEY: string;
   XAI_API_KEY: string;
+  /** Google OAuth (CybrBuild) — redirect flow only */
+  GOOGLE_CLIENT_ID: string;
+  GOOGLE_CLIENT_SECRET: string;
+  /** Session cookie signing; SESSION_SECRET accepted as alias */
+  AUTH_SECRET: string;
+  SESSION_SECRET: string;
+  /** Production origin lock: https://build.cybrflux.online */
+  APP_URL: string;
+  AUTH_URL: string;
+  /** When "true", future hard-gate for /api/chat (off by default) */
+  AUTH_REQUIRED: string;
   PERPLEXITY_API_KEY: string;
   AWS_BEDROCK_CONFIG: string;
 }

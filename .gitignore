@@ -46,3 +46,7 @@ docs/instructions/Roadmap.md
 .cursorrules
 *.md
 .qodo
+
+# CybrBuild docs (override blanket *.md)
+!docs/CYBRBUILD-MCP-BRIDGE.md
+!docs/CYBRBUILD-VAULT-GATES.md

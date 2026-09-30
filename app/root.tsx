@@ -1,10 +1,11 @@
 import { useStore } from '@nanostores/react';
-import type { LinksFunction } from '@remix-run/cloudflare';
+import { json, type LinksFunction, type LoaderFunctionArgs } from '@remix-run/cloudflare';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import tailwindReset from '@unocss/reset/tailwind-compat.css?url';
 import { themeStore } from './lib/stores/theme';
 import { stripIndents } from './utils/stripIndent';
 import { createHead } from 'remix-island';
+import { getUser, authConfigured } from './lib/auth/user.server';
 import { useEffect } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -15,6 +16,14 @@ import globalStyles from './styles/index.scss?url';
 import xtermStyles from '@xterm/xterm/css/xterm.css?url';
 
 import 'virtual:uno.css';
+
+export async function loader({ request, context }: LoaderFunctionArgs) {
+  const user = await getUser(request, context);
+  return json({
+    user,
+    authConfigured: authConfigured(context),
+  });
+}
 
 export const links: LinksFunction = () => [
   {
